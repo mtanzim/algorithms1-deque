@@ -40,25 +40,27 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the  front (stack push)
     public void addFirst(Item item) {
-        StdOut.println("Adding " + item + " to front!");
+        // StdOut.println("Adding " + item + " to front!");
         Node oldfirst = first;
         first = new Node();
         first.item = item;
         first.next = oldfirst;
         first.prev = null;
-
+        if (oldfirst != null) {
+            oldfirst.prev = first;
+        }
         if (n == 0) {
             last = first;
         }
         n++;
-        StdOut.println("Added " + item + " to front!");
+        // StdOut.println("Added " + item + " to front!");
         // assert check();
 
     }
 
     // add the item to the back (queue enqueue)
     public void addLast(Item item) {
-        StdOut.println("Adding " + item + " to end!");
+        // StdOut.println("Adding " + item + " to end!");
         Node oldlast = last;
         last = new Node();
         last.item = item;
@@ -71,7 +73,7 @@ public class Deque<Item> implements Iterable<Item> {
             first = last;
         }
         n++;
-        StdOut.println("Added " + item + " to end!");
+        // StdOut.println("Added " + item + " to end!");
         return;
     }
 
@@ -92,20 +94,34 @@ public class Deque<Item> implements Iterable<Item> {
     // remove and return the item from the front
     // same as stack pop
     public Item removeFirst() {
-        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+        if (isEmpty()) throw new NoSuchElementException("Deque empty!");
         Item item = first.item;        // save item to return
         first = first.next;            // delete first node
+        if (first != null) {
+            first.prev = null;
+        }
         n--;
+        if (n == 0) {
+            last = first;
+        }
         return item;                   // return the saved item
     }
 
     // remove and return the item from the end
     public Item removeLast() {
-        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
+        if (isEmpty()) throw new NoSuchElementException("Deque empty!");
         Item item = last.item;        // save item to return
+        // StdOut.println("Removing " + item);
         last = last.prev;            // delete first node
-        last.next = null;
+
+        if (last != null) {
+            // StdOut.println("Last now contains " + last.item);
+            last.next = null;
+        }
         n--;
+        if (n == 0) {
+            first = last;
+        }
         return item;                   // return the saved item
     }
 
@@ -169,7 +185,66 @@ public class Deque<Item> implements Iterable<Item> {
         StdOut.println(deque.size());
         StdOut.println(deque.toString());
 
-        // corner case testing TBD
+        //make empyty
+        StdOut.println("Emptying: ");
+        deque.removeLast();
+        // deque.removeFirst();
+        // deque.removeLast();
+        StdOut.println(deque.toString());
+        deque.removeLast();
+        StdOut.println(deque.toString());
+        // deque.removeLast();
+
+
+        StdOut.println("Size of queue:");
+        StdOut.println(deque.size());
+        StdOut.println("Is it empty?");
+        StdOut.println(deque.isEmpty());
+
+
+        StdOut.println("Start again");
+        deque.addFirst("Hi");
+        deque.addFirst("Hello");
+        deque.addFirst("Hola");
+        deque.addFirst("Amigo");
+        StdOut.println(deque.toString());
+
+        deque.addLast("Atlas");
+        deque.addLast("Map");
+        deque.addLast("World");
+        deque.addLast("Jagat");
+        StdOut.println(deque.toString());
+
+        //Empty again
+        StdOut.println(deque.removeLast());
+        StdOut.println(deque.removeFirst());
+        StdOut.println(deque.removeLast());
+        StdOut.println(deque.removeFirst());
+        StdOut.println(deque.removeLast());
+        StdOut.println(deque.removeFirst());
+        StdOut.println(deque.removeFirst());
+        StdOut.println(deque.removeLast());
+
+        StdOut.println("Size of queue:");
+        StdOut.println(deque.size());
+        StdOut.println("Is it empty?");
+        StdOut.println(deque.isEmpty());
+
+        // Cause an exception
+        try {
+            StdOut.println(deque.removeFirst());
+        }
+        catch (Exception error) {
+            StdOut.println(error);
+            try {
+                StdOut.println(deque.removeLast());
+            }
+            catch (Exception errorInner) {
+                StdOut.println(errorInner);
+
+            }
+        }
+
 
     }
 }
