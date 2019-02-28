@@ -29,11 +29,29 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Deque.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="720">
-                    <caret line="246" column="8" selection-start-line="246" selection-start-column="8" selection-end-line="246" selection-end-column="8" />
+                  <state relative-caret-position="204">
+                    <caret line="12" selection-start-line="12" selection-end-line="12" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/ResizingArrayStack.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="652">
+                    <caret line="164" selection-start-line="164" selection-end-line="170" selection-end-column="63" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/LinkedStack.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1105">
+                    <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
                   </state>
                 </provider>
               </entry>
@@ -49,20 +67,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LinkedStack.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RadomizedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="99" selection-start-line="99" selection-end-line="104" selection-end-column="63" />
+            <state relative-caret-position="293">
+              <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/.lift/algs4.jar!/edu/princeton/cs/algs4/StdRandom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="2142">
+              <caret line="126" column="38" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/.lift/algs4.jar!/edu/princeton/cs/algs4/EulerianCycle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/.lift/algs4.jar!/edu/princeton/cs/algs4/SequentialSearchST.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -85,23 +121,25 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>check</find>
+      <find>isEmpty</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/instructions/Deque.java" />
-        <option value="$PROJECT_DIR$/ResizingArrayStack.java" />
-        <option value="$PROJECT_DIR$/LinkedStack.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Deque.java" />
+        <option value="$PROJECT_DIR$/LinkedStack.java" />
+        <option value="$PROJECT_DIR$/ResizingArrayStack.java" />
+        <option value="$PROJECT_DIR$/RadomizedQueue.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="y" value="27" />
-    <option name="width" value="950" />
-    <option name="height" value="1010" />
+    <option name="y" value="25" />
+    <option name="width" value="1291" />
+    <option name="height" value="1012" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -112,8 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,10 +157,30 @@
               <item name="Deques and Randomized Queues" type="b2602c69:ProjectViewProjectNode" />
               <item name="queues" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Deques and Randomized Queues" type="b2602c69:ProjectViewProjectNode" />
+              <item name="queues" type="462c0819:PsiDirectoryNode" />
+              <item name=".lift" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Deques and Randomized Queues" type="b2602c69:ProjectViewProjectNode" />
+              <item name="queues" type="462c0819:PsiDirectoryNode" />
+              <item name=".lift" type="462c0819:PsiDirectoryNode" />
+              <item name="algs4.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="Deques and Randomized Queues" type="b2602c69:ProjectViewProjectNode" />
+              <item name="queues" type="462c0819:PsiDirectoryNode" />
+              <item name=".lift" type="462c0819:PsiDirectoryNode" />
+              <item name="algs4.jar" type="ab9368bb:PsiFileNode" />
+              <item name="algs4" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Deque">
+  <component name="RunManager" selected="Application.RadomizedQueue">
     <configuration name="Deque" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Deque" />
       <module name="Algorithms, Part I" />
@@ -154,6 +210,11 @@
     </configuration>
     <configuration name="LinkedStack" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="LinkedStack" />
+      <module name="Algorithms, Part I" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RadomizedQueue" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="RadomizedQueue" />
       <module name="Algorithms, Part I" />
       <method v="2" />
     </configuration>
@@ -180,6 +241,7 @@
       <item itemvalue="Application.ResizingArrayStack" />
       <item itemvalue="Application.LinkedStack" />
       <item itemvalue="Application.Deque" />
+      <item itemvalue="Application.RadomizedQueue" />
       <item itemvalue="JAR Application.algs4.jar" />
       <item itemvalue="JAR Application.checkstyle-lift.jar" />
     </list>
@@ -199,16 +261,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="950" height="1010" extended-state="4" />
+    <frame x="0" y="25" width="1291" height="1012" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945235" visible="true" weight="0.2373247" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945235" visible="true" weight="0.24921136" />
       <window_info id="Structure" order="1" show_stripe_button="false" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" show_stripe_button="false" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733192" visible="true" weight="0.33100232" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49733192" visible="true" weight="0.2127907" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -216,9 +278,9 @@
       <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.32968238" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5026681" side_tool="true" weight="0.14069767" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49973643" weight="0.32634032" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49973643" weight="0.3255814" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="11" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.50054765" weight="0.25757575" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.50054765" weight="0.25697675" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -274,9 +336,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/instructions/Deque.java" />
-    <entry file="file://$PROJECT_DIR$/Deque.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/ResizingArrayStack.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -295,13 +354,6 @@
     <entry file="file://$PROJECT_DIR$/mediumTale.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ResizingArrayStack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="121" column="24" lean-forward="true" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -312,24 +364,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LinkedStack.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" selection-start-line="99" selection-end-line="104" selection-end-column="63" />
+        <state relative-caret-position="494">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/Deque.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/.lift/algs4.jar!/edu/princeton/cs/algs4/StdRandom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="2142">
+          <caret line="126" column="38" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/.lift/algs4.jar!/edu/princeton/cs/algs4/EulerianCycle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/.lift/algs4.jar!/edu/princeton/cs/algs4/SequentialSearchST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Deque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="246" column="8" selection-start-line="246" selection-start-column="8" selection-end-line="246" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinkedStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ResizingArrayStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="164" selection-start-line="164" selection-end-line="170" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadomizedQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
         </state>
       </provider>
     </entry>

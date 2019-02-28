@@ -63,7 +63,7 @@ public class LinkedStack<Item> implements Iterable<Item> {
      *
      * @return true if this stack is empty; false otherwise
      */
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return first == null;
     }
 
