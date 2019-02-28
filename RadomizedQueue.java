@@ -78,15 +78,15 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
         StdOut.println("Dequeing index: " + randomNum);
         Item item = a[randomNum];
         StdOut.println("Dequeing " + item);
-
-        int k = 0;
-        while (item == null && k < n) {
+        // prevents infinite loops, but may not work?
+        // int k = 0;
+        while (item == null) {
             StdOut.println("Trying again because item is:" + item);
             randomNum = StdRandom.uniform(n);
             StdOut.println("Dequeing index: " + randomNum);
             item = a[randomNum];
             StdOut.println("Dequeing " + item);
-            k++;
+            // k++;
         }
         StdOut.println("");
         a[randomNum] = null;
@@ -101,9 +101,12 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
         if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         int randomNum = StdRandom.uniform(n);
         Item item = a[randomNum];
+        // prevents infinite loops, but may not work?
+        // int k = 0;
         while (item == null) {
             randomNum = StdRandom.uniform(n);
             item = a[randomNum];
+            // k++;
         }
         return item;
     }
