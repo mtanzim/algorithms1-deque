@@ -45,20 +45,31 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
 
     }
 
+    private Item[] removeNull(Item[] origArr, int size) {
+        Item[] temp = (Item[]) new Object[size];
+        int k = 0;
+        for (int i = 0; i < n; i++) {
+            if (origArr[i] != null) {
+                temp[k++] = origArr[i];
+            }
+        }
+        return temp;
+    }
+
     private void resize(int capacity) {
         assert capacity >= n;
 
         // textbook implementation
         // for the randomized queue, remove null items during resize
-        Item[] temp = (Item[]) new Object[capacity];
-        int k = 0;
+        // Item[] temp = (Item[]) new Object[capacity];
+        /*int k = 0;
         for (int i = 0; i < n; i++) {
             if (a[i] != null) {
                 temp[k++] = a[i];
             }
-        }
+        }*/
 
-        a = temp;
+        a = removeNull(a, capacity);
         n = realN;
         // alternative implementation
         // a = java.util.Arrays.copyOf(a, capacity);
@@ -121,31 +132,31 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
     // needs to be randomized!!!
     private class ReverseArrayIterator implements Iterator<Item> {
 
-        private Item[] a_shuffled = (Item[]) new Object[realN];         // array of items
-        private int i;
-
+        private Item[] a_shuffled;         // array of items
+        private int i = 0;
 
         // constructor
         public ReverseArrayIterator() {
-            i = n - 1;
-            int k = i;
+            // i = n - 1;
+            // int k = n - 1;
             // copy over non-null items
-            for (int j = i; j > 0; j--) {
+            /*for (int j = k; j > 0; j--) {
                 if (a[j] != null) {
                     a_shuffled[k] = a[j];
                     k--;
                 }
-            }
+            }*/
             // i is now the same size as the number of non-null items
-            i = a_shuffled.length;
 
+            a_shuffled = removeNull(a, realN);
             // now shuffle the array
             StdRandom.shuffle(a_shuffled);
+            // i = a_shuffled.length - 1;
 
         }
 
         public boolean hasNext() {
-            return i >= 0;
+            return i < realN;
         }
 
         public void remove() {
@@ -154,7 +165,7 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
 
         public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
-            return a[i--];
+            return a_shuffled[i++];
         }
     }
 
@@ -165,13 +176,39 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
         RadomizedQueue<String> randQ = new RadomizedQueue<String>();
         while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
-            if (!item.equals("-")) randQ.enqueue(item);
-                // if (item.equals("=")) StdOut.println(randQ.sample());
-            else if (!randQ.isEmpty()) StdOut.println(randQ.dequeue() + " ");
-            if (!randQ.isEmpty()) StdOut.println("sample: " + randQ.sample());
+            if (item.equals("q")) break;
+
+            if (!randQ.isEmpty()) {
+                if (item.equals("-")) StdOut.println(randQ.dequeue() + " ");
+                else if (item.equals("=")) StdOut.println("sample: " + randQ.sample());
+
+                    // test iterator
+                else if (item.equals("@")) {
+                    StdOut.println("Iterator Test");
+                    Iterator iter = randQ.iterator();
+                    int i = 0;
+                    while (iter.hasNext()) {
+                        StdOut.print(iter.next() + " => ");
+                        i++;
+                    }
+                    StdOut.println();
+                    StdOut.println("End Iterator. It had size: " + i);
+
+                }
+                else {
+                    randQ.enqueue(item);
+                }
+            }
+            else {
+                if (!((item.equals("-")) || (item.equals("=")) || (item.equals("@")))) {
+                    randQ.enqueue(item);
+                }
+                else {
+                    StdOut.println("Invalid operation");
+                }
+            }
             randQ.toStr();
         }
-        StdOut.println("(" + randQ.size() + " left on stack)");
     }
 
 }
