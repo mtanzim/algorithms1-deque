@@ -120,10 +120,28 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
     // an iterator, doesn't implement remove() since it's optional
     // needs to be randomized!!!
     private class ReverseArrayIterator implements Iterator<Item> {
+
+        private Item[] a_shuffled = (Item[]) new Object[realN];         // array of items
         private int i;
 
+
+        // constructor
         public ReverseArrayIterator() {
             i = n - 1;
+            int k = i;
+            // copy over non-null items
+            for (int j = i; j > 0; j--) {
+                if (a[j] != null) {
+                    a_shuffled[k] = a[j];
+                    k--;
+                }
+            }
+            // i is now the same size as the number of non-null items
+            i = a_shuffled.length;
+
+            // now shuffle the array
+            StdRandom.shuffle(a_shuffled);
+
         }
 
         public boolean hasNext() {
@@ -148,7 +166,9 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
         while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             if (!item.equals("-")) randQ.enqueue(item);
+                // if (item.equals("=")) StdOut.println(randQ.sample());
             else if (!randQ.isEmpty()) StdOut.println(randQ.dequeue() + " ");
+            if (!randQ.isEmpty()) StdOut.println("sample: " + randQ.sample());
             randQ.toStr();
         }
         StdOut.println("(" + randQ.size() + " left on stack)");
