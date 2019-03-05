@@ -12,7 +12,7 @@ public class Permutation {
         // String line = StdIn.readString(args);
         // StdOut.println(line);
         int k = Integer.parseInt(args[0]);
-        RadomizedQueue<String> randQ = new RadomizedQueue<String>();
+        RandomizedQueue<String> randQ = new RandomizedQueue<String>();
 
         assert (k > 0);
         StdOut.println("Hello from Permutation with k: " + k);

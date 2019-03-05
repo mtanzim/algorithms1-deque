@@ -11,14 +11,14 @@ import edu.princeton.cs.algs4.StdRandom;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class RadomizedQueue<Item> implements Iterable<Item> {
+public class RandomizedQueue<Item> implements Iterable<Item> {
 
     private Item[] a;         // array of items
     private int n;            // number of elements on stack, despite null elements
     private int realN;            // number of elements on stack, without nullElemens
 
     // construct an empty randomized queue
-    public RadomizedQueue() {
+    public RandomizedQueue() {
         a = (Item[]) new Object[2];
         n = 0;
         realN = 0;
@@ -141,7 +141,7 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
     // unit testing (optional)
     public static void main(String[] args) {
         StdOut.println("Hello!");
-        RadomizedQueue<String> randQ = new RadomizedQueue<String>();
+        RandomizedQueue<String> randQ = new RandomizedQueue<String>();
         while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             if (item.equals("q")) break;
