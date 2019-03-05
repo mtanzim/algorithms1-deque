@@ -65,7 +65,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     // add item
     public void enqueue(Item item) {
-        StdOut.println("Enqueing " + item);
+        // StdOut.println("Enqueing " + item);
         if (n == a.length) resize(2 * a.length);    // double size of array if necessary
         a[n++] = item;                            // add item
         realN++;
@@ -75,18 +75,18 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     public Item dequeue() {
         if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         int randomNum = StdRandom.uniform(n);
-        StdOut.println("Dequeing index: " + randomNum);
+        // StdOut.println("Dequeing index: " + randomNum);
         Item item = a[randomNum];
-        StdOut.println("Dequeing " + item);
+        // StdOut.println("Dequeing " + item);
         // infinite loop? Statistically impossible?
         while (item == null) {
-            StdOut.println("Trying again because item is:" + item);
+            // StdOut.println("Trying again because item is:" + item);
             randomNum = StdRandom.uniform(n);
-            StdOut.println("Dequeing index: " + randomNum);
+            // StdOut.println("Dequeing index: " + randomNum);
             item = a[randomNum];
-            StdOut.println("Dequeing " + item);
+            // StdOut.println("Dequeing " + item);
         }
-        StdOut.println("");
+        // StdOut.println("");
         a[randomNum] = null;
         realN--;
         // shrink size of array if necessary

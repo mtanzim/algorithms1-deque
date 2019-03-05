@@ -231,7 +231,7 @@ public class Deque<Item> implements Iterable<Item> {
         StdOut.println(deque.isEmpty());
 
         // Cause an exception
-        try {
+        /*try {
             StdOut.println(deque.removeFirst());
         }
         catch (Exception error) {
@@ -243,7 +243,7 @@ public class Deque<Item> implements Iterable<Item> {
                 StdOut.println(errorInner);
 
             }
-        }
+        }*/
 
 
     }
