@@ -49,7 +49,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private void resize(int capacity) {
         assert capacity >= n;
         // for the randomized queue, remove null items during resize
-        StdOut.println("resizing to new capacity: " + capacity);
+        // StdOut.println("resizing to new capacity: " + capacity);
         Item[] temp = (Item[]) new Object[capacity];
 
         int k = 0;

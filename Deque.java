@@ -40,6 +40,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the  front (stack push)
     public void addFirst(Item item) {
+        if (item == null) throw new IllegalArgumentException("Invalid argument");
         // StdOut.println("Adding " + item + " to front!");
         Node oldfirst = first;
         first = new Node();
@@ -61,6 +62,8 @@ public class Deque<Item> implements Iterable<Item> {
     // add the item to the back (queue enqueue)
     public void addLast(Item item) {
         // StdOut.println("Adding " + item + " to end!");
+        if (item == null) throw new IllegalArgumentException("Invalid argument");
+
         Node oldlast = last;
         last = new Node();
         last.item = item;
@@ -236,7 +239,7 @@ public class Deque<Item> implements Iterable<Item> {
         }
         catch (Exception error) {
             StdOut.println(error);
-            try {
+            try {x
                 StdOut.println(deque.removeLast());
             }
             catch (Exception errorInner) {
