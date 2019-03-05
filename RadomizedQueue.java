@@ -45,36 +45,25 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
 
     }
 
-    private Item[] removeNull(Item[] origArr, int size) {
-        Item[] temp = (Item[]) new Object[size];
-        int k = 0;
-        for (int i = 0; i < n; i++) {
-            if (origArr[i] != null) {
-                temp[k++] = origArr[i];
-            }
-        }
-        return temp;
-    }
 
     private void resize(int capacity) {
         assert capacity >= n;
-
-        // textbook implementation
         // for the randomized queue, remove null items during resize
-        // Item[] temp = (Item[]) new Object[capacity];
-        /*int k = 0;
+        StdOut.println("resizing to new capacity: " + capacity);
+        Item[] temp = (Item[]) new Object[capacity];
+
+        int k = 0;
         for (int i = 0; i < n; i++) {
             if (a[i] != null) {
                 temp[k++] = a[i];
             }
-        }*/
+        }
 
-        a = removeNull(a, capacity);
+        a = temp;
         n = realN;
-        // alternative implementation
-        // a = java.util.Arrays.copyOf(a, capacity);
     }
 
+    // add item
     public void enqueue(Item item) {
         StdOut.println("Enqueing " + item);
         if (n == a.length) resize(2 * a.length);    // double size of array if necessary
@@ -82,22 +71,20 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
         realN++;
     }
 
-    // add the item
+    // remove at random
     public Item dequeue() {
         if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         int randomNum = StdRandom.uniform(n);
         StdOut.println("Dequeing index: " + randomNum);
         Item item = a[randomNum];
         StdOut.println("Dequeing " + item);
-        // prevents infinite loops, but may not work?
-        // int k = 0;
+        // infinite loop? Statistically impossible?
         while (item == null) {
             StdOut.println("Trying again because item is:" + item);
             randomNum = StdRandom.uniform(n);
             StdOut.println("Dequeing index: " + randomNum);
             item = a[randomNum];
             StdOut.println("Dequeing " + item);
-            // k++;
         }
         StdOut.println("");
         a[randomNum] = null;
@@ -107,52 +94,34 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
         return item;
     }
 
-    // remove and return a random item
+    // return random item, do not remove
     public Item sample() {
         if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         int randomNum = StdRandom.uniform(n);
         Item item = a[randomNum];
-        // prevents infinite loops, but may not work?
-        // int k = 0;
         while (item == null) {
             randomNum = StdRandom.uniform(n);
             item = a[randomNum];
-            // k++;
         }
         return item;
     }
 
-    // return a random item (but do not remove it)
+    // return a new iterator
     public Iterator<Item> iterator() {
-        return new ReverseArrayIterator();
+        return new ShuffledArrayIterator();
 
     }
 
-    // an iterator, doesn't implement remove() since it's optional
-    // needs to be randomized!!!
-    private class ReverseArrayIterator implements Iterator<Item> {
+    private class ShuffledArrayIterator implements Iterator<Item> {
 
-        private Item[] a_shuffled;         // array of items
         private int i = 0;
 
         // constructor
-        public ReverseArrayIterator() {
-            // i = n - 1;
-            // int k = n - 1;
-            // copy over non-null items
-            /*for (int j = k; j > 0; j--) {
-                if (a[j] != null) {
-                    a_shuffled[k] = a[j];
-                    k--;
-                }
-            }*/
-            // i is now the same size as the number of non-null items
-
-            a_shuffled = removeNull(a, realN);
-            // now shuffle the array
-            StdRandom.shuffle(a_shuffled);
-            // i = a_shuffled.length - 1;
-
+        public ShuffledArrayIterator() {
+            // remove nulls before returning iterator
+            resize(realN);
+            // shuffle the array at uniform
+            StdRandom.shuffle(a);
         }
 
         public boolean hasNext() {
@@ -165,10 +134,9 @@ public class RadomizedQueue<Item> implements Iterable<Item> {
 
         public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
-            return a_shuffled[i++];
+            return a[i++];
         }
     }
-
 
     // unit testing (optional)
     public static void main(String[] args) {
